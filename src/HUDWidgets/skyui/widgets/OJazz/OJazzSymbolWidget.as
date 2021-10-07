@@ -44,7 +44,7 @@ class skyui.widgets.OJazz.OJazzSymbolWidget extends WidgetBase
 		songTitle.text = newSongTitle;
 		songArtist.text = newSongArtist;
 		songLengthAndLicense.text = newSongLength;
-		if (newSongLicense == ""){
+		if (newSongLicense != ""){
 			songLengthAndLicense.text += " - "+newSongLicense;
 		}
 	}
