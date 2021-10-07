@@ -11,9 +11,7 @@ class skyui.widgets.OJazz.OJazzSymbolWidget extends WidgetBase
 	public var textWidget: MovieClip;
 	public var songTitle: TextField;
 	public var songArtist: TextField;
-	public var songLength: TextField;
-	public var songLicense: TextField;
-	public var songLicenseLable: TextField;
+	public var songLengthAndLicense: TextField;
 	
 	public function OJazzSymbolWidget()
 	{
@@ -23,11 +21,8 @@ class skyui.widgets.OJazz.OJazzSymbolWidget extends WidgetBase
 		textWidget = baseWidget.textWidget;
 		songTitle = baseWidget.textWidget.songTitle;
 		songArtist = baseWidget.textWidget.songArtist;
-		songLength = baseWidget.textWidget.songLength;
-		songLicense = baseWidget.textWidget.songLicense;
-		songLicenseLable = baseWidget.textWidget.songLicenseLable;
+		songLengthAndLicense = baseWidget.textWidget.songLengthAndLicense;
 	}
-
 
 	/* PUBLIC FUNCTIONS */
 
@@ -48,15 +43,9 @@ class skyui.widgets.OJazz.OJazzSymbolWidget extends WidgetBase
 		setVisible(true);
 		songTitle.text = newSongTitle;
 		songArtist.text = newSongArtist;
-		songLength.text = newSongLength;
+		songLengthAndLicense.text = newSongLength;
 		if (newSongLicense == ""){
-			songLicenseLable.visible = false;
-			songLicense.visible = false;
-		}
-		else{
-			songLicenseLable.visible = true;
-			songLicense.visible = true;
-			songLicense.text = newSongLicense;
+			songLengthAndLicense.text += " - "+newSongLicense;
 		}
 	}
 
